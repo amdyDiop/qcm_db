@@ -4,7 +4,7 @@
 <head>
     <title>Login </title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/miniProjet.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/miniProjet.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
@@ -15,9 +15,7 @@
             <form action="" method="post">
                 <div class="form-group">
                     <label for="login focusedInput">Login</label>
-
-                    <input class="col-12 form-control-lg placeholder bgLogin" type="text " name="login" id="login" value="" placeholder="login ">
-
+                    <input class="col-12 form-control-lg placeholder bgLogin" type="text " name="login" id="login" value="" placeholder="login">
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
@@ -28,7 +26,7 @@
                 </div>
             </form>
             <div class="form-group ">
-                <a href="inscription.php"> <button class="col-9 ml-5 mb-4 button Righteous">S'incrire</button>
+                <a href="src/template/joueur/inscription.php"> <button class="col-9 ml-5 mb-4 button Righteous">S'incrire</button>
             </div>
         </div>
     </div>

@@ -9,17 +9,14 @@
         line-height: 68px;
         color: white;
     }
-
     .logo {
         float: left;
         width: 58px;
         height: 71px;
     }
-
     body {
         background-color: #999999;
     }
-
     .global {
         width: 95%;
         height: 530px;
@@ -28,14 +25,11 @@
         border: solid;
         border-color: white;
     }
-
     .content {
         padding-top: 10%;
         width: 100%;
         height: 424px;
     }
-
-
     /*  login css   */
     .login {
         margin-top: 10%;
@@ -44,9 +38,7 @@
         height: 306px;
         width: 90%;
     }
-
     .loginHeader {
-
         line-height: 50px;
         width: 100%;
         text-align: left;
@@ -56,13 +48,11 @@
         color: white;
         background-color: #51bfd0;
     }
-
     .loginContent {
         width: 100%;
         height: 245px;
         background-color: rgb(240, 238, 238);
     }
-
     .inputLogin {
         font-size: 15px;
         background-color: #e6e3e3;
@@ -77,7 +67,6 @@
         margin-left: 5%;
         margin-right: 5%;
     }
-
     .inputPassword {
         font-size: 15px;
         background-color: #e6e3e3;
@@ -93,15 +82,12 @@
         margin-left: 5%;
         margin-right: 5%;
     }
-
-    ::placeholder {
+     ::placeholder {
         margin-left: 15%;
     }
-
     a {
         text-decoration: none;
     }
-
     .submit {
         color: white;
         text-decoration: none;
@@ -111,7 +97,6 @@
         font-size: 12px;
         background-color: #51bfd0;
     }
-
     .inscrir {
         color: rgb(160, 158, 158);
         border: none;
@@ -120,29 +105,23 @@
         height: 44px;
         font-size: 14px;
     }
-
     .errorLog {
         color: red;
         margin-left: 6%;
     }
-
     .errorPassword {
         color: red;
         margin-left: 6%;
         margin-top: -3%;
     }
-
-
     /**-----------------------------------------------css admin const---------------------------------------------------*/
     .globalAdmin {
-
         margin-top: -9.7%;
         margin-left: 3%;
         margin-right: 3%;
         background-color: #f2f2f2;
         height: 457px;
     }
-
     .headerAdmin {
         width: 100%;
         height: 70px;
@@ -155,7 +134,6 @@
         text-align: left;
         float: left;
     }
-
     .deconnexion {
         border-radius: 3%;
         float: right;
@@ -169,11 +147,9 @@
         background-color: #3addd5;
         color: #f8f5f5;
     }
-
     .texteAdmin {
         text-align: left;
     }
-
     .menu {
         float: left;
         background-color: white;
@@ -182,7 +158,6 @@
         width: 38%;
         height: auto;
     }
-
     .headerMenu {
         padding-top: 1%;
         background: linear-gradient(to top, #51bfd0 0%, #f9fdfd 100%);
@@ -190,11 +165,9 @@
         height: 103px;
         margin-bottom: 0.1%;
     }
-
     .divUI {
         margin-top: 2%;
     }
-
     .userImg {
         margin-top: 3%;
         padding: 1.5%;
@@ -204,7 +177,6 @@
         height: 60px;
         border: groove;
     }
-
     .nom {
         width: 57%;
         text-transform: uppercase;
@@ -214,7 +186,6 @@
         margin-left: 60%;
         margin-top: -25%;
     }
-
     .prenom {
         width: 47%;
         text-transform: uppercase;
@@ -224,13 +195,11 @@
         margin-left: 68%;
         margin-top: -2%;
     }
-
     .menuItem {
         background-color: #ffffff;
         width: 100%;
         height: auto;
     }
-
     .navBar {
         margin-top: 4%;
         margin-bottom: 4%;
@@ -242,20 +211,18 @@
         font-size: 14px;
         font-family: none sans-serif;
     }
-
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        /*width: 200px*/;
+        /*width: 200px*/
+        ;
     }
-
     li a {
         display: block;
         color: #5f5f5f;
         text-decoration: none;
     }
-
     li a.active {
         background-color: green;
         width: 2%;
@@ -263,12 +230,10 @@
         border: groove;
         color: #48ae52;
     }
-
     li a:hover:not(.active) {
         background-color: #f8f3f0;
         color: #aeaeae;
     }
-
     .iconAdd {
         margin-top: 2%;
         margin-right: 5%;
@@ -279,7 +244,6 @@
         width: 24px;
         height: 24px;
     }
-
     .iconListeActive {
         margin-top: 2%;
         margin-right: 5%;
@@ -289,7 +253,6 @@
         width: 24px;
         height: 24px;
     }
-
     .iconListe {
         margin-right: 5%;
         margin-top: 2%;
@@ -299,7 +262,6 @@
         width: 24px;
         height: 24px;
     }
-
     .rightContent {
         margin-top: 1%;
         margin-left: 2%;
@@ -308,15 +270,12 @@
         width: 55%;
         height: 380px;
     }
-
     .rightContent .td {
         font-size: 15px;
     }
-
     .upercase {
         text-transform: uppercase;
     }
-
     .textListJoueur {
         margin-top: 3%;
         margin-left: 4%;
@@ -326,7 +285,6 @@
         width: 90%;
         height: 34px;
     }
-
     .tabList {
         margin-top: -2%;
         margin-left: 4%;
@@ -338,14 +296,12 @@
         border-color: #51bfd0;
         width: 90%;
     }
-
     table {
         width: 100%;
         margin-left: -4%;
         font-family: "myriad pro", serif;
         font-size: 12px;
     }
-
     .suivant {
         text-align: center;
         border-radius: 1.4%;
@@ -359,7 +315,6 @@
         background-color: #3addd5;
         color: #f8f5f5;
     }
-
     .precedent {
         text-align: center;
         border-radius: 1.4%;
@@ -373,8 +328,6 @@
         background-color: #aeaeae;
         color: #f8f5f5;
     }
-
-
     /*----------------------------------------------content question liste-----------------------------------------------------------------------------*/
     .contentListQuestion {
         margin-top: 1%;
@@ -384,7 +337,6 @@
         width: 58%;
         height: 380px;
     }
-
     .borderIn {
         overflow: auto;
         margin-left: 5%;
@@ -396,7 +348,6 @@
         height: 300px;
         font-family: "myriad pro", serif;
     }
-
     .nbQuestion {
         position: absolute;
         margin-left: 24%;
@@ -404,7 +355,6 @@
         height: 23px;
         margin-top: -5.78%;
     }
-
     .ok {
         position: absolute;
         margin-left: 34%;
@@ -413,7 +363,6 @@
         margin-top: -5.75%;
         background-color: #5e90af;
     }
-
     .textNbQuestion {
         margin-top: 3.5%;
         margin-left: 0%;
@@ -423,12 +372,10 @@
         width: 80%;
         height: 34px;
     }
-
     .line {
         width: 100%;
         height: 34px;
     }
-
     .texte {
         line-height: 28px;
         margin-left: -14%;
@@ -436,20 +383,17 @@
         font-size: 16px;
         text-align: center;
     }
-
     .questioncontent {
         margin-top: 0.5%;
         width: 100%;
         height: auto;
     }
-
     .question {
         margin-left: 1.5%;
         width: 98%;
         font-size: 14px;
         height: auto;
     }
-
     checkbox {
         width: 8%;
         font-size: 12px;
@@ -458,7 +402,6 @@
         margin-bottom: -3%;
         background-color: #51bfd0;
     }
-
     input[type="checkbox" i] {
         background-color: #51bfd0;
         width: 28%;
@@ -471,7 +414,6 @@
         left: .5px;
         line-height: 0;
     }
-
     input[type="radio" i] {
         background-color: #51bfd0;
         width: 8%;
@@ -484,14 +426,12 @@
         left: .5px;
         line-height: 0;
     }
-
     .inputReponse {
         width: 55%;
         margin-left: 5%;
         font-size: 12px;
         height: 27px;
     }
-
     .container {
         display: block;
         position: relative;
@@ -504,7 +444,6 @@
         -ms-user-select: none;
         user-select: none;
     }
-
     .checkmark {
         position: absolute;
         top: 0;
@@ -513,8 +452,6 @@
         width: 25px;
         background-color: #eee;
     }
-
-
     /*--------------------------------------------------content new admin Question----------------------------------------------------------------------------------*/
     .contentNewQuestion {
         padding-right: 1%;
@@ -524,7 +461,6 @@
         width: 57%;
         height: 380px;
     }
-
     .cadreInterne {
         margin-top: -2%;
         margin-left: 4%;
@@ -537,9 +473,7 @@
         width: 94%;
         height: 307px;
         overflow: auto;
-
     }
-
     .label {
         float: left;
         text-align: left;
@@ -548,7 +482,6 @@
         font-size: 12px;
         font-weight: bold;
     }
-
     .labelReponse {
         width: 20%;
         font-size: 6px;
@@ -556,7 +489,6 @@
         margin-left: 20%;
         margin-top: -10%;
     }
-
     .titlenewQuestion {
         color: #3addd5;
         margin-left: 6%;
@@ -565,36 +497,29 @@
         font-size: 14px;
         text-align: center;
     }
-
     .questionNew {
         margin-top: 2%;
         height: 67px;
     }
-
     textarea {
         background-color: #f7f7f7;
     }
-
     .nbQuestionNew {
         margin-top: 2%;
         height: 40px;
         border: solid white;
     }
-
     .nbPoint {
         margin-top: 2%;
         height: 10px;
         float: right;
     }
-
     .positionLabelQuestion {
         margin-top: 4%;
         float: left;
         font-size: 16px;
         font-weight: bold;
     }
-
-
     .cadreInterne [type="number" i] {
         margin-top: -1%;
         background-color: #f7f7f7;
@@ -602,7 +527,6 @@
         width: 18%;
         margin-right: 50%;
     }
-
     .cadreInterne [type="text" i] {
         background-color: #f7f7f7;
         margin-top: -2%;
@@ -611,7 +535,6 @@
         margin-left: -4%;
         font-size: 12px;
     }
-
     .cadreInterne select {
         margin-top: -2.5%;
         background-color: #f7f7f7;
@@ -619,7 +542,6 @@
         height: 25px;
         margin-left: -20%;
     }
-
     .addInpute {
         background-image: url(../Images/Icones/ic-ajout-reponse.png);
         background-repeat: no-repeat;
@@ -631,7 +553,6 @@
         margin-top: -1.7%;
         position: absolute;
     }
-
     .cadreInterne input[type="checkbox" i] {
         background-color: #51bfd0;
         width: 8%;
@@ -642,7 +563,6 @@
         left: -2.5px;
         float: left;
     }
-
     .cadreInterne input[type="radio" i] {
         background-color: #51bfd0;
         width: 13%;
@@ -653,7 +573,6 @@
         left: -2.5px;
         float: left;
     }
-
     .area {
         background-color: #f7f7f7;
         width: 65%;
@@ -663,7 +582,6 @@
         left: -2.5px;
         float: left;
     }
-
     .delete {
         background-image: url(../Images/Icones/ic-supprimer.png);
         background-repeat: no-repeat;
@@ -674,8 +592,6 @@
         margin-right: -2%;
         margin-top: -3%;
     }
-
-
     /*--------------------------------------------------content add admin----------------------------------------------------------------------------------*/
     .contentaddAdmin {
         margin-top: 1%;
@@ -687,7 +603,6 @@
         color: #5f5f5f;
         height: 378px;
     }
-
     .sousTexte {
         color: #5f5f5f;
         width: 50%;
@@ -695,7 +610,6 @@
         font-size: 12px;
         padding-left: 3%;
     }
-
     .texteInsc {
         color: #5f5f5f;
         width: 40%;
@@ -703,13 +617,11 @@
         font-size: 22px;
         padding-left: 3%;
     }
-
     hr {
         float: left;
         width: 60%;
         background-color: #5f5f5f;
     }
-
     .addminImg {
         margin-top: -6%;
         float: right;
@@ -718,7 +630,6 @@
         height: 90px;
         border: groove #51bfd0;
     }
-
     .adminAdd {
         padding-left: 3%;
         float: left;
@@ -726,7 +637,6 @@
         width: 50%;
         height: 87%;
     }
-
     .texteAvatar {
         margin-right: 3%;
         margin-top: 1%;
@@ -735,19 +645,16 @@
         font-size: medium;
         width: 30%;
     }
-
     label {
         font-size: 73%;
         margin-bottom: 3%;
         width: 97%
     }
-
     .input {
         width: 80%;
         height: 4%;
         border-radius: 2%;
     }
-
     .inputfile {
         color: white;
         float: right;
@@ -756,7 +663,6 @@
         border-radius: 2%;
         background-color: #51bfd0;
     }
-
     .buttonValider {
         margin-left: 23%;
         width: 75%;
@@ -765,7 +671,6 @@
         border-radius: 2%;
         color: white;
     }
-
     /*------------------------------------------css new player-----------------------------------------------------------------------------------------*/
     .contentNewJoueur {
         margin-top: -11%;
@@ -777,7 +682,6 @@
         color: #5f5f5f;
         height: 440px;
     }
-
     .texteInscJoueur {
         margin-top: 2%;
         font-family: inherit;
@@ -787,7 +691,6 @@
         font-size: 30px;
         padding-left: 3%;
     }
-
     .sousTextejoueur {
         color: #5f5f5f;
         width: 72%;
@@ -795,7 +698,6 @@
         font-size: 15px;
         padding-left: 3%;
     }
-
     .inputJoueur {
         width: 110%;
         height: 11%;
@@ -804,13 +706,11 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
-
     .labelJoueur {
         font-size: 14px;
         margin-bottom: 10%;
         width: 99%;
     }
-
     .joueurImg {
         margin-top: -6%;
         float: right;
@@ -820,21 +720,17 @@
         height: 145px;
         border: groove #51bfd0;
     }
-
     .hr {
         float: left;
         width: 65%;
         background-color: #5f5f5f;
     }
-
     input:invalid {
         border: 2px groove red;
     }
-
     input:focus:invalid {
         outline: none;
     }
-
     .error {
         margin-bottom: 1%;
         width: 100%;
@@ -846,12 +742,9 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
-
     .error.active {
         padding: 0.3em;
     }
-
-
     /*----------------------------------------------------- JOUEUR ____________________________________________________________________________*/
     .texteheader1 {
         height: 15px;
@@ -861,7 +754,6 @@
         text-align: center;
         font-size: 11px;
     }
-
     .texteheader2 {
         height: 15px;
         padding-top: 2%;
@@ -871,7 +763,6 @@
         text-align: center;
         font-size: 11px;
     }
-
     .deconnexionJoueur {
         border-radius: 3%;
         float: right;
@@ -885,7 +776,6 @@
         color: #f8f5f5;
         font-size: 10px;
     }
-
     .joueurImgheader {
         padding: .5%;
         margin-left: -10%;
@@ -893,19 +783,16 @@
         width: 52px;
         height: 52px;
     }
-
     .contentHeader {
         width: 100%;
         height: 70px;
     }
-
     .Imgdiv {
         float: left;
         height: 52px;
         margin-left: 2%;
         width: 7.5%;
     }
-
     .usernameJoueur {
         float: left;
         margin-left: -8%;
@@ -914,7 +801,6 @@
         width: 17%;
         font-size: 9px;
     }
-
     .contentjoueur {
         float: left;
         background-color: white;
@@ -926,7 +812,6 @@
         border-radius: 2%;
         overflow: auto;
     }
-
     .question {
         margin-top: 3%;
         width: 86%;
@@ -939,23 +824,19 @@
         padding-right: 5%;
         padding-left: 5%;
         padding-bottom: 2%;
-
         text-decoration-style: solid;
         text-transform: capitalize;
     }
-
     .textequestion {
         margin-top: 2%;
         font-size: 15px;
     }
-
     .contentjoueur hr {
         width: 28%;
         height: 1px;
         margin-left: 36%;
         margin-top: -10%;
     }
-
     .nombreDePoint {
         margin-top: 2%;
         margin-bottom: 4%;
@@ -968,16 +849,14 @@
         font-size: 22px;
         line-height: 34px;
     }
-
     .reponse {
         margin-top: 9%;
         width: 86%;
         margin-left: 4%;
         margin-right: 2%;
-
     }
-
-    .reponse input[type="checkbox" i], input[type="radio" i] {
+    .reponse input[type="checkbox" i],
+    input[type="radio" i] {
         background-color: #51bfd0;
         width: 18%;
         font-size: 12px;
@@ -988,7 +867,6 @@
         left: 5px;
         line-height: 0;
     }
-
     .reponse .radio {
         background-color: #51bfd0;
         width: 18%;
@@ -1000,7 +878,6 @@
         left: .5px;
         line-height: 0;
     }
-
     .reponse .checkbox {
         background-color: #51bfd0;
         width: 18%;
@@ -1012,7 +889,6 @@
         left: .5px;
         line-height: 0;
     }
-
     .reponse .precedent {
         text-align: center;
         border-radius: 1.4%;
@@ -1026,7 +902,6 @@
         background-color: #929292;
         color: #f8f5f5;
     }
-
     .reponse .suivant {
         text-align: center;
         border-radius: 1.4%;
@@ -1040,7 +915,6 @@
         background-color: #3addd5;
         color: #f8f5f5;
     }
-
     .reponse .quitter {
         text-align: center;
         border-radius: 1.4%;
@@ -1054,7 +928,6 @@
         background-color: #dd241e;
         color: #f8f5f5;
     }
-
     .score {
         float: right;
         background-color: white;
@@ -1064,47 +937,40 @@
         height: 353px;
         border: groove;
     }
-
     .score table {
         font-size: 10.4px;
         text-align: left;
         margin-left: 2%;
     }
-
     .score ul {
         font-size: 8px;
         list-style-type: none;
         margin: 0;
         background-color: #f2f2f2;
     }
-
     .score li {
         float: left;
         text-align: left;
         font-size: 15.5px;
         border: 3px solid white;
     }
-
     .score li:last-child {
         border-right: none;
     }
-
     .score li a {
         display: block;
-        color: #3addd5;;
+        color: #3addd5;
+        ;
         text-align: center;
         padding: 8px 16px;
         text-decoration: none;
     }
-
     .score li a:hover:not(.active) {
         background-color: white;
     }
-
     .score .active {
         background-color: white;
     }
-
     .texteScore {
         margin-top: 30%;
         font-size: 50px;
@@ -1112,21 +978,18 @@
         font-family: "Agency FB", fantasy;
         text-align: center;
     }
-
     .valide {
         background-image: url("../Images/Icones/valide.png");
         float: left;
         width: 15px;
         height: 23px;
     }
-
     .invalide {
         background-image: url("../Images/Icones/invalide.png");
         float: left;
         width: 23px;
         height: 23px;
     }
-
     .resultat {
         margin-left: 10%;
         width: 95%;
@@ -1137,25 +1000,14 @@
         background-color: #f2f2f2;
         color: #48ae52;
     }
-
     .felicitation {
         /* basic font setting */
         font: bold 1.4em Impact, sans-serif;
         text-align: center;
         letter-spacing: 4px
     }
-
-
     .feu {
         color: #51bfd0;
-        text-shadow: 0 0 2px #3addd5,
-        1px -1px 3px #4874fe,
-        -2px -2px 4px #ffae34,
-        2px -4px 5px #ec760c,
-        -2px -6px 6px #cd4606,
-        0 -8px 7px #973716,
-        1px -9px 8px #451b0e;
+        text-shadow: 0 0 2px #3addd5, 1px -1px 3px #4874fe, -2px -2px 4px #ffae34, 2px -4px 5px #ec760c, -2px -6px 6px #cd4606, 0 -8px 7px #973716, 1px -9px 8px #451b0e;
     }
-
-
 }
