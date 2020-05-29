@@ -36,6 +36,10 @@
             text-align: center;
         }
         
+        form .error {
+            color: #ff0000;
+        }
+        
         .inscription {
             font-family: Righteous;
             font-style: normal;
@@ -78,4 +82,25 @@
             float: left;
             margin-left: -20%;
             background-color: #AD44F6;
+        }
+        
+        .mauve {
+            background-color: #D96BCE;
+        }
+        
+        .bleu {
+            background-color: #34BBE6;
+            border-radius: 30px;
+        }
+        
+        .bleuf {
+            background-color: #3494E6;
+        }
+        /**-------------------------------------------admin----------------------------------*/
+        
+        .roundButton {
+            border-radius: 50%;
+            width: 40%;
+            height: 125%;
+            background-color: #D96BCE;
         }

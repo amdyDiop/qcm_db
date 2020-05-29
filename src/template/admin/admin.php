@@ -39,75 +39,121 @@ $db = json_decode($db, true);
 $_SESSION['question'] =$db;
 //print_r( $_SESSION['question']);
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title> Admin </title>
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
-    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="../../../assets/css/miniProjetportable.css"/>
-    <link rel="stylesheet"  href="../../../assets/js/adminController.js">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <!DOCTYPE html>
+    <html lang="fr">
 
-</head>
-<body>
-<div class="global">
-    <div class="header">
-        <img class="logo" src="../../../assets/Images/logo-QuizzSA.png" alt="logo quiz">
-        Le plaisir de jouer
-    </div>
-    <div class="content">
-        <div class="globalAdmin">
-            <div class="headerAdmin">
-                <div class="texteAdmin">créer et paramétrer vos quizz
-                    <form method="post">
-                        <input class="deconnexion" type="submit" value="Déconnexion" name="deconnexionAdmin">
+    <head>
+        <title>admin </title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
 
-                    </form>
+    <body>
+        <div class="container justify-content-center mt-md-4 bg-primary ">
+            <div class="row">
+                <div class="col-3">
+                    <img src="../../../assets/Images/bg-01.jpg" class="rounded-circle " alt="" width="90" height="90">
+                </div>
+                <div class="col-6 text-center ">
+                    <span class="h2 text-white text-uppercase Righteous"> BIENVENUE <?=$_SESSION['admin']['prenom']?> <?=$_SESSION['admin']['nom']?> CRÉER ET PARAMÉTRER VOS QUIZZ </span>
+                </div>
+                <div class=" mt-4 col-md-3 text-center ">
+                    <button type="button" class="btn mauve texte-white" type="submit">Déconnexion</button>
                 </div>
             </div>
-            <div class="menu">
-                <div class="headerMenu">
-                    <div class="divUI">
-                        <?php echo '<img class="userImg" src="' . $_SESSION['admin']->photo . '" alt="user">' ?>
-                    </div>
-                    <div class="nom"> <?= $_SESSION['admin']->prenom ?></div>
-                    <div class="prenom"><?= $_SESSION['admin']->nom ?></div>
-                </div>
-                <div class="menuItem">
-                    <ul>
-                        <li class="navBar">
-                            <a href="admin.php?page=listeQuestion"> Liste Question
-                                <div class="iconListe"></div>
-                            </a>
-                        </li>
-                        <li class="navBar">
-                            <a href="admin.php?page=newAdmin"> Créer Admin
-                                <div class="iconAdd"></div>
-                            </a>
-                        </li>
-                        <li class="navBar">
-                            <a href="admin.php?page=listeJoueur"> Liste joueur
-                                <div class="iconListeActive"></div>
-                            </a>
-                        </li>
-                        <li class="navBar">
-                            <a href="admin.php?page=newQuestion"> Créer Questions
-                                <div class="iconAdd"></div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <?php
-            if (!empty($_SESSION['url'])) {
-                include $_SESSION['url'];
-            }
-            ?>
         </div>
-    </div>
-</body>
-<script src="../../../assets/js/fonction.js"></script>
-<script src="../../../assets/js/adminController.js"></script>
+        <div class="container justify-content-center mt-md-4 bg-primary ">
+            <div class="row">
 
-</html>
+                <div class="col-2 mt-ms-4  ml-5 mr-5 mb-4 pb-3 pt-2  text-white text-center h5 mauve">Liste Joueurs </div>
+
+                <div class="col-2 mt-ms-4  ml-5 mr-5 mb-4 pb-3 pt-2  text-white text-center h5 mauve">Créer Admin</div>
+
+                <div class="col-2 mt-ms-4  ml-5 mr-5 mb-4 pb-3 pt-2  text-white text-center h5 mauve">Liste Questions</div>
+                <div class="col-2 mt-ms-4  ml-5  mb-4 pb-3 pt-2  text-white text-center h5 mauve">Crée Question </div>
+
+
+                <div class="container bleu">
+                    <div class="row ">
+                        <div class="card col-10 bg-primary border-primary">
+                            <table class="table table-bordered table-hover text-center mt-2 ">
+                                <thead class="bleu">
+                                    <tr>
+                                        <th scope="col-3">Prénom</th>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Sore</th>
+                                        <th scope="col">image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="mauve">
+                                        <td>Mark</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr class="mauve">
+                                        <td>Jacob</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr class="mauve">
+                                        <td>Larry</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr class="mauve">
+                                        <td>Larry</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr class="mauve mb-4">
+                                        <td class="mb-4">Larry</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <tr class="mauve">
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="card col-2 bg-primary border-primary ">
+                            <div class="row justify-content-center pt-4 mb-5 mt-4 ">
+                                <input class="button mt-4  roundButton" type="submit" value=">">
+
+                            </div>
+                            <div class="row justify-content-center pt-4 mt-5">
+                                <button class="button mt-4 roundButton" type="button"><</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <script src=" ../../../assets/js/fonction.js "></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+            <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js "></script>
+            <script src="../../../assets/js/fonction.js "></script>
+    </body>
+
+    </html>
