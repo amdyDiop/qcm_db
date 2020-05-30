@@ -4,7 +4,7 @@ $_SESSION['url'] = "listeJoueur.php";
 if (empty($_SESSION['admin'])) {
     header('Location: ../../../index.php');
 }
-if (isset($_POST['deconnexionAdmin'])) {
+if (isset($_POST['deconnexion'])) {
     unset($_SESSION['admin']);
     header('Location: ../../../index.php');
 }
@@ -63,7 +63,10 @@ $_SESSION['question'] =$db;
                     <span class="h2 text-white text-uppercase Righteous"> BIENVENUE <?=$_SESSION['admin']['prenom']?> <?=$_SESSION['admin']['nom']?> CRÉER ET PARAMÉTRER VOS QUIZZ </span>
                 </div>
                 <div class=" mt-4 col-md-3 text-center ">
-                    <button type="button" class="btn mauve texte-white" type="submit">Déconnexion</button>
+                    <form action="" method="POST">
+                        <input class="btn  mauve texte-white fr" type="submit" name="deconnexion" value="Déconnexion">
+
+                    </form>
                 </div>
             </div>
         </div>

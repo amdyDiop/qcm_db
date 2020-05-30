@@ -1,33 +1,5 @@
 <?php
-$error="";
-if(isset($_POST['login'])){
-    try
-    {
-        $bd = new PDO('mysql:host=localhost;dbname=mini_projet_qcm;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $data= $bd->query('SELECT * FROM user WHERE username="'.$_POST['login'].'"');    
-        $user = $data->fetch();
-        $data->closeCursor(); // Termine le traitement de la requête
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }   
-    if (!empty($user)){
-       session_start();
-       $_SESSION['user'] = $user;
-      // var_dump($_SESSION['user']);
-       if (strcmp($user['role'],"joueur")==0 && strcmp($user['username'],$_POST['login'])==0 && strcmp($user['password'],$_POST['password'])==0  ) {
-        header('Location: /src/template/joueur/joueur.php');
-       }
-       else {
-        $_SESSION['admin'] = $user;
-        header('Location: src/template/admin/admin.php');
-       }
-    }
-    else{
-        echo 'magui fii dé';
-        $error = "Cet utilisateur n'a pas de compte? inscrivez-vous pour se connecter";
-    }
-  
-}
+include ('src/controller/indexController.php');
 ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -48,12 +20,14 @@ if(isset($_POST['login'])){
                 <form action="" method="post" name="connexion">
                     <div class="form-group">
                         <label for="login focusedInput">Login</label>
-                        <input class="col-12 form-control-lg placeholder bgLogin" type="text " name="login" id="login" value="" placeholder="login">
-                        <label id="password-error" class="error" for="label"><?=$error?></label>
+                        <input class="col-12 form-control-lg placeholder bgLogin" type="text " name="login" id="login" value="<?=@$_POST['login']?>" placeholder="login">
+                        <span id="password-error" class="error" for="label"><?=$error?></span>
                      </div>
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
-                        <input class="col-12 form-control-lg placeholder bgPassword" type="password" name="password" id="password" value="" placeholder="mot de passe ">
+                        <input class="col-12 form-control-lg placeholder bgPassword" type="password" name="password" id="password" value="<?=@$_POST['password']?>" placeholder="mot de passe ">
+                        <span id="password-error" class="error" for="label"><?=$errorP?></span>
+                   
                     </div>
                     <div class="form-group">
                         <input class="col-9 ml-5 button Righteous" id="submit" type="submit" name="submit" value="Connexion ">
@@ -64,7 +38,7 @@ if(isset($_POST['login'])){
                 </div>
             </div>
         </div>
-        <script src=" assets/js/fonction.js "></script>
+        <script src="assets/js/fonction.js "></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>

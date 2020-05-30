@@ -46,47 +46,22 @@ $_SESSION['debutQuestion'] = ($_SESSION['pageCourant'] - 1) * $_SESSION['questio
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <title> joueur </title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
-    <link rel="stylesheet" media="screen and (max-width: 1224px)"  href="../../../assets/css/miniProjetTablette.css"/>
-    <link rel="stylesheet" media="screen and (max-width: 768px)"  href="../../../assets/css/miniProjetportable.css"/>
+<head>    <head>
+        <title>jouer</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
 </head>
 <body>
 <div class="global">
-    <div class="header">
-        <img class="logo" src="../../../assets/Images/logo-QuizzSA.png" alt="logo quiz">
-        Le plaisir de jouer
-    </div>
-    <div class="content">
-        <div class="globalAdmin">
-            <div class="headerAdmin">
-                <div class="contentHeader">
-                    <div class="Imgdiv">
-                        <img class="joueurImgheader" src="<?=$_SESSION['user']->photo?>">
-                    </div>
-                    <div class="usernameJoueur"><?= $_SESSION['user']->prenom . ' ' . $_SESSION['user']->nom ?></div>
-                    <div class="texteheader1">
-                        BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ
-                    </div>
-                    <div class="texteheader2">
-                        JOUER ET TESTER VOTRE NIVEAU DE CULTURE GÉNÉRALE
-                    </div>
-                    <form method="post">
-                        <input class="deconnexionJoueur" type="submit" value="Déconnexion" name="deconnexion">
-                    </form>
-                </div>
-            </div>
-            <?php include($_SESSION['jeux']) ?>
-            <div class="score">
-                <ul>
-                    <li><a href="joueur.php?page=topScore">Top score </a></li>
-                    <li><a href="joueur.php?page=meilleur">Meilleur score </a></li>
-                </ul>
-                <?php include($_SESSION['url']) ?>
-            </div>
-        </div>
-    </div>
+
+        <img class="logo" src="../../../assets/Images/user/<?=$_SESSION['user']['image']?>" alt="logo quiz">
+
+
 </body>
 </html>
