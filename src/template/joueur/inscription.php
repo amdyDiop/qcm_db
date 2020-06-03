@@ -25,7 +25,7 @@
         <h1 class="text-center mt-xl-2  pt-1 inscription">Inscription</h1>
         <form action="" method="post" enctype="multipart/form-data" name="inscription">
             <div class="row">
-                <div class="card col-8 border-white">
+                <div class="card col-10 border-white">
                     <div class="row">
                         <div class="container col-10 ml-0">
                             <div class="form-group">
@@ -77,19 +77,16 @@
                             <div class="form-group ">
                                 <input class="col-9 ml-5 button Righteous" id="submitIns" type="submit" name="submit"
                                        value="S'inscrire ">
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card col-4 border-white">
+                <div class="card col-2 border-white">
                     <div class="form-group ">
                         <img class="round" src="../../../assets/Images/user.png" alt="avarar">
-                        <input class="form-control-file inputFile bg-primary-" type="file" name="file" id="file"
+                        <input class="form-control-file  bg-primary-" type="file" name="file" id="file"
                                value="<?= @$_POST['file'] ?>" onchange="previewFile()">
                         <div id="file-error" class="error" for="label"></div>
-
                     </div>
                 </div>
             </div>
@@ -108,9 +105,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="../../../assets/js/fonction.js"></script>
-<script>
-
-</script>
 </body>
 
 </html>
