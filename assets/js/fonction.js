@@ -25,53 +25,7 @@
 
 */
 
-//connection  à la base de donnée avec ajax
-$(document).ready(function () {
-    $("#resultat").hide(1);
-    $("#submit").click(function (e) {
-        e.preventDefault();
-        $.post(
-            'http://localhost/mini-projetDB/src/controller/indexController.php', // Un script PHP que l'on va créer juste après
-            {
-                login: $("#login").val(),  // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
-                password: $("#password").val()
-            },
-            function (data) {
-                if ($("#login").val() ==="")    {
-                    $("#login-error").html("Veuillez saisir votre  nom d'utilisateur !")
-                        .fadeIn().delay(2000).fadeOut();
-                }
-                else  if ($("#password").val() ==="")    {
-                    $("#password-error").html("Veuillez saisir votre  mot de passe !")
-                        .fadeIn().delay(2000).fadeOut();
-                }
-                else {
-                    if (data === 'joueur') {
-                        $("#resultat").show().html("CONNEXION REUSSIE CHARGEMENT ...");
-                        setTimeout(function () {
-                            window.location.href = "src/template/joueur/joueur.php";
-                        }, 2000);
-                    } else if (data === 'admin') {
-                        $("#resultat").show().html("CONNEXION ...");
-                        setTimeout(function () {
-                            window.location.href = "src/template/admin/admin.php";
-                        }, 2000);
-                    } else if (data === 'password not found') {
-                        //lors ce que le mot de passe ne correspond pas a celle du login
-                        $("#password-error").html("mot de passe incorrecte")
-                            .fadeIn().delay(2000).fadeOut();
-                    } else if (data === 'not found') {
-                        //lors ce quele login ne ce trouve pas dans notre base de donnée
-                        $("#login-error").html("Cet utilisateur n'a pas de compte? inscrivez-vous pour se connecter")
-                            .fadeIn().delay(2000).fadeOut();
-                    }
-                }
 
-            },
-            'text'
-        );
-    });
-});
 
 // validation formulaire d'inscription
 $(document).ready(function () {
@@ -130,6 +84,53 @@ $(document).ready(function () {
     });
 });
 
+//connection  à la base de donnée avec ajax
+$(document).ready(function () {
+    $("#resultat").hide(1);
+    $("#submit").click(function (e) {
+        e.preventDefault();
+        $.post(
+            'http://localhost/mini-projetDB/src/controller/indexController.php', // Un script PHP que l'on va créer juste après
+            {
+                login: $("#login").val(),  // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
+                password: $("#password").val()
+            },
+            function (data) {
+                if ($("#login").val() ==="")    {
+                    $("#login-error").html("Veuillez saisir votre  nom d'utilisateur !")
+                        .fadeIn().delay(2000).fadeOut();
+                }
+                else  if ($("#password").val() ==="")    {
+                    $("#password-error").html("Veuillez saisir votre  mot de passe !")
+                        .fadeIn().delay(2000).fadeOut();
+                }
+                else {
+                    if (data === 'joueur') {
+                        $("#resultat").show().html("CONNEXION REUSSIE CHARGEMENT ...");
+                        setTimeout(function () {
+                            window.location.href = "src/template/joueur/joueur.php";
+                        }, 2000);
+                    } else if (data === 'admin') {
+                        $("#resultat").show().html("CONNEXION ...");
+                        setTimeout(function () {
+                            window.location.href = "src/template/admin/admin.php";
+                        }, 2000);
+                    } else if (data === 'password not found') {
+                        //lors ce que le mot de passe ne correspond pas a celle du login
+                        $("#password-error").html("mot de passe incorrecte")
+                            .fadeIn().delay(2000).fadeOut();
+                    } else if (data === 'not found') {
+                        //lors ce quele login ne ce trouve pas dans notre base de donnée
+                        $("#login-error").html("Cet utilisateur n'a pas de compte? inscrivez-vous pour se connecter")
+                            .fadeIn().delay(2000).fadeOut();
+                    }
+                }
+
+            },
+            'text'
+        );
+    });
+});
 //inscription et mise a jour de la base de  donnée
 $(document).ready(function () {
     $("#resultat").hide(1);
@@ -209,3 +210,41 @@ function previewFile() {
         reader.readAsDataURL(file);
     }
 }
+// navigation des pages admins
+$(document).ready(function(){
+    $("#listeJ").css("background-color", "#34BBE6");
+    $("#container").load("listeJoueur.php ");
+    // un élément portant l'id "content" existe dans contenu.html
+    $("#listeJ").click(function () {
+        $("#container").load("listeJoueur.php "); // un élément portant l'id "content" existe dans contenu.html
+        $("#listeJ").css("background-color", "#34BBE6");
+        $("#newAdmin").css("background-color", "#D96BCE");
+        $("#listeQ").css("background-color", "#D96BCE");
+        $("#newQuestion").css("background-color", "#D96BCE");
+
+    });
+    $("#listeQ").click(function () {
+        $("#container").load("listeQuestion.php "); // un élément portant l'id "content" existe dans contenu.html
+        $("#listeJ").css("background-color", "#D96BCE");
+        $("#newAdmin").css("background-color", "#D96BCE");
+        $("#listeQ").css("background-color", "#34BBE6");
+        $("#newQuestion").css("background-color", "#D96BCE");
+    });
+    $("#newAdmin").click(function () {
+        $("#container").load("newAdmin.php "); // un élément portant l'id "content" existe dans contenu.html
+        $("#listeJ").css("background-color", "#D96BCE");
+        $("#newAdmin").css("background-color", "#34BBE6");
+        $("#listeQ").css("background-color", "#D96BCE");
+        $("#newQuestion").css("background-color", "#D96BCE");
+
+    });
+    $("#newQuestion").click(function () {
+        $("#container").load("newQuestion.php "); // un élément portant l'id "content" existe dans contenu.html
+        $("#listeJ").css("background-color", "#D96BCE");
+        $("#newAdmin").css("background-color", "#D96BCE");
+        $("#listeQ").css("background-color", "#D96BCE");
+        $("#newQuestion").css("background-color", "#34BBE6");
+
+    });
+
+});

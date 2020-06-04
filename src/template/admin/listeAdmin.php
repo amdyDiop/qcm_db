@@ -4,7 +4,6 @@
         <tr>
             <th scope="col-3">Prénom</th>
             <th scope="col">Nom</th>
-            <th scope="col">Sore</th>
             <th scope="col">image</th>
             <th scope="col">Action</th>
 
@@ -13,34 +12,33 @@
         <tbody>
         <tr class="mauve">
             <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+           <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
+        </tr>
+        <tr class="mauve">
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-           <td><button class="btn mauve"><i class=" fa fa-lock" style="color: white"></i></button></td>
+            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
         </tr>
         <tr class="mauve">
-            <td>Jacob</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><button class="btn mauve"><i class=" fa fa-lock" style="color: white"></i></button></td>
-
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
         </tr>
         <tr class="mauve">
-            <td>Larry</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td><button class="btn mauve"><i class=" fa fa-lock" style="color: white"></i></button></td>
-
+            <td>Mark</td>
+            <td>Mark</td>
+            <td>@mdo</td>
+            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
         </tr>
         <tr class="mauve">
-            <td>Larry</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td><button class="btn mauve"><i class=" fa fa-lock" style="color: white"></i></button></td>
-
+            <td>Mark</td>
+            <td>Mark</td>
+            <td>@mdo</td>
+            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
         </tr>
         </tbody>
     </table>

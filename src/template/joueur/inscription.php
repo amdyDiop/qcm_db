@@ -43,7 +43,6 @@
                                 <input class="col-12 form-control placeholder bgLogin " type="text" name="nom" id="nom"
                                        value="<?= @$_POST['nom'] ?>" placeholder="Votre nom ">
                                 <span id="nom-error" class="error" for="label"></span>
-
                             </div>
                             <div class="form-group ">
                                 <div class="row ml-2 ">

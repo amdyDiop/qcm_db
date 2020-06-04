@@ -105,7 +105,7 @@
             background-color: #D96BCE;
         }
         .fa {
-            font-size:22px !important;
+            font-size:15px !important;
             width: 90%;
         }
         /************************************ partiejouer----------------------------------------------*/
@@ -155,3 +155,10 @@
             height: 150px;
             border: groove;
         }
+        .checkbox{
+            width: 40px;
+            height: 40px;
+        }
+.ml-n1{
+    margin-left: -6%;
+}

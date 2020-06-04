@@ -15,9 +15,13 @@
             <td class="border-right mr-4 border-primary">Question ici amoule seral mean niaf ko fi</td>
             <td class="border-right mr-4 border-primary">1212 pts</td>
             <td class="border-right mr-4 border-primary">simple</td>
-            <td class="border-right mr-4 border-primary">5 reponses</td>
-            <td class="border-right mr-4 border-primary">Question ici amoule seral mean niaf ko fi</td>
-            <td class="border-right mr-4 border-primary">actio</td>
+            <td class="border-right mr-4 border-primary">3 reponses</td>
+            <td class="border-right mr-4 border-primary">reponse vrai ici amoule seral mean niaf ko fi</td>
+            <td class="border-right mr-4 border-primary">
+                <button class="btn mauve"><i class=" fa fa-pencil" style="color: white"></i></button>
+                <button class="btn mauve"><i class="fa fa-eye " style="color: white"></i></button>
+                <button class="btn mauve"><i class="fa fa-trash" style="color: white"></i></button>
+            </td>
         </tr>
         <tr class="mauve ">
             <td class="border-right mr-4 border-primary">Question ici amoule seral mean niaf ko fi</td>
@@ -32,7 +36,7 @@
                 <div> 5 reponses</div>
                 <div> 5 reponses</div>
             </td>
-            <td class="border-right mr-4 border-primary">
+            <td class="border-right mr-2 border-primary">
                 <button class="btn mauve"><i class=" fa fa-pencil" style="color: white"></i></button>
                 <button class="btn mauve"><i class="fa fa-eye " style="color: white"></i></button>
                 <button class="btn mauve"><i class="fa fa-trash" style="color: white"></i></button>
