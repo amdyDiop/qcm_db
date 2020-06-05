@@ -70,7 +70,7 @@ if (isset($_POST['reJouer'])) {
 <div class="container justify-content-center mt-md-2 bg-primary ">
     <div class="row">
         <div class="col-2">
-            <img src="../../../assets/Images/bg-01.jpg" class="rounded-circle " alt="" width="90" height="90">
+            <img src="../../../assets/Images/user/<?=$_SESSION['user']['image']?>" class="rounded-circle " alt="" width="90" height="90">
         </div>
         <div class="col-7 text-center ">
             <div class="h4 text-white text-uppercase Righteous"> BIENVENUE AMDY DIOP</div>

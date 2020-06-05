@@ -41,7 +41,6 @@ $_SESSION['question'] =$db;
 ?>
     <!DOCTYPE html>
     <html lang="fr">
-
     <head>
         <title>admin </title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,7 +62,7 @@ $_SESSION['question'] =$db;
             <!-- header-->
             <div class="row">
                 <div class="col-3">
-                    <img src="../../../assets/Images/bg-01.jpg" class="rounded-circle " alt="" width="90" height="90">
+                    <img src="../../../assets/Images/user/<?=$_SESSION['admin']['image']?>" class="rounded-circle " alt="" width="90" height="90">
                 </div>
                 <div class="col-6 text-center ">
                     <span class="h2 text-white text-uppercase Righteous"> BIENVENUE <?=$_SESSION['admin']['prenom']?> <?=$_SESSION['admin']['nom']?> CRÉER ET PARAMÉTRER VOS QUIZZ </span>
@@ -83,10 +82,10 @@ $_SESSION['question'] =$db;
             <!-- navbar-->
             <div class="row">
                 <button type="button" id="listeJ" class=" btn btn-lg col text-white text-center h5 mauve" >Liste Joueurs </button>
-                <button type="button" id="newAdmin"  class="btn btn-lg col text-white text-center h5 mauve">Créer Admin</button>
-                <button type="button" id="listeQ"  class="btn btn-lg  mr-4 text-white text-center h5 mauve">Liste Questions</button>
-                <button type="button" id="newQuestion"  class="btn btn-lg text-white text-center h5 mauve">Crée Question </button>
-                <button type="button" id="listeAdmin"  class="btn btn-lg text-white text-center h5 mauve">Liste Admin </button>
+                <button type="button" id="newAdmin" class="btn btn-lg col text-white text-center h5 mauve">Créer Admin</button>
+                <button type="button" id="listeQ"  class="btn btn-lg col  text-white text-center h5 mauve">Liste Questions</button>
+                <button type="button" id="newQuestion"  class="btn btn-lg col  text-white text-center h5 mauve">Crée Question </button>
+                <button type="button" id="listeAdmin"  class="btn btn-lg col text-white text-center h5 mauve">Liste Admin </button>
             </div>
             <!-- navbar-->
 
@@ -98,15 +97,13 @@ $_SESSION['question'] =$db;
                 </div>
             </div>
         <!--  content -->
-
-
         <!-- Footer -->
         <footer class="page-footer container mt-2 mb-1">
             <div class="row noir">
-                <div class="col-4 ">
+                <div class="col-2">
                     <img src="../../../assets/Images/footer.PNG" class="rounded-circle " alt="" width="70" height="70">
                 </div>
-                <div class="footer-copyright text-center py-3 h3 text-white">© 2020 Copyright: amdy diop</div>
+                <span class="footer-copyright text-center py-3 h3 text-white col-8">© 2020 Copyright: amdy diop</span>
             </div>
             <!--a href="https://mdbootstrap.com/"> MDBootstrap.com</a-->
         </footer>

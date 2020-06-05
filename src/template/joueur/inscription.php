@@ -33,7 +33,7 @@
                                     <label for="login">Login</label>
                                 </div>
                                 <input class="col-12 form-control placeholder bgLogin" type="text" name="login"
-                                       id="login" value="<?= @$_POST['login'] ?>" placeholder="nom d'utilisateur ">
+                                       id="login" value="<?= @$_POST['login']?>" placeholder="nom d'utilisateur ">
                                 <span id="login-error" class="error" for="label"></span>
                             </div>
                             <div class="form-group ">
@@ -41,7 +41,7 @@
                                     <label for="nom">Nom</label>
                                 </div>
                                 <input class="col-12 form-control placeholder bgLogin " type="text" name="nom" id="nom"
-                                       value="<?= @$_POST['nom'] ?>" placeholder="Votre nom ">
+                                       value="<?=@$_POST['nom']?>" placeholder="Votre nom ">
                                 <span id="nom-error" class="error" for="label"></span>
                             </div>
                             <div class="form-group ">
@@ -49,7 +49,7 @@
                                     <label for="prenom">Prénom</label>
                                 </div>
                                 <input class="col-12 form-control placeholder bgLogin " type="text" name="prenom"
-                                       id="prenom" value="<?= @$_POST['prenom'] ?>" placeholder="Votre Prénom ">
+                                       id="prenom" value="<?=@$_POST['prenom']?>" placeholder="Votre Prénom ">
                                 <span id="prenom-error" class="error" for="label"></span>
                             </div>
                             <div class="form-group ">
@@ -57,7 +57,7 @@
                                     <label for="password">Mot de passe</label>
                                 </div>
                                 <input class="col-12 form-control placeholder bgPassword " type="password"
-                                       name="password" id="password" value="<?= @$_POST['password'] ?>"
+                                       name="password" id="password" value="<?= @$_POST['password']?>"
                                        placeholder="mot de passe ">
                                 <span id="password-error" class="error" for="label"></span>
 
@@ -67,12 +67,10 @@
                                     <label for="cPassword">Confirmation</label>
                                 </div>
                                 <input class="col-12 form-control placeholder bgPassword" type="password"
-                                       name="cPassword" id="cPassword" value="<?= @$_POST['cPassword'] ?>"
+                                       name="cPassword" id="cPassword" value="<?=@$_POST['cPassword']?>"
                                        placeholder=" resaisir le mot de passe ">
                                 <span id="cPassword-error" class="error" for="label"></span>
-
                             </div>
-
                             <div class="form-group ">
                                 <input class="col-9 ml-5 button Righteous" id="submitIns" type="submit" name="submit"
                                        value="S'inscrire ">
@@ -84,7 +82,7 @@
                     <div class="form-group ">
                         <img class="round" src="../../../assets/Images/user.png" alt="avarar">
                         <input class="form-control-file  bg-primary-" type="file" name="file" id="file"
-                               value="<?= @$_POST['file'] ?>" onchange="previewFile()">
+                             onchange="previewFile()">
                         <div id="file-error" class="error" for="label"></div>
                     </div>
                 </div>
@@ -104,6 +102,83 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="../../../assets/js/fonction.js"></script>
+<script>
+    $("#submitIns").click(function (e) {
+        e.preventDefault();
+        var login = $('#login').val();
+        var prenom = $('#prenom').val();
+        var nom = $('#nom').val();
+        var password = $('#password').val();
+        var file_data = $('#file').prop('files')[0];    //Fetch the file
+        var form_data = new FormData();
+        form_data.append("file",file_data);
+        form_data.append("login",login);
+        form_data.append("prenom",prenom);
+        form_data.append("nom",nom);
+        form_data.append("password",password);
+        //Ajax to send file to upload
+        $.ajax({
+            url:'http://localhost/mini-projetDB/src/controller/inscriptionController.php', // Un script PHP que l'on va créer juste après
+            type: "POST",
+            dataType: 'script',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            success:function(data){
+                if ($("#login").val() === "") {
+                    $("#login-error").html("Veuillez saisir votre  nom d'utilisateur !")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+
+                }
+                else if ($("#nom").val() === "") {
+                    $("#nom-error").html("Veuillez saisir votre  nom  !")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                }
+                else if ($("#prenom").val() === "") {
+                    $("#prenom-error").html("Veuillez saisir votre  prénom  !")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                }
+                else if ($("#password").val() === "") {
+                    $("#password-error").html("Veuillez saisir votre  mot de passe  !")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                }
+                else if ($("#cPassword").val() !== $("#password").val()) {
+                    $("#cPassword-error").html("mot de passe non identique!")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                }
+                else if ($("#file").val() === "") {
+                    $("#file-error").html("Choisisez une photo!")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+
+                }
+                else if (data === 'login existe') {
+                    $("#login-error").html("ce login existe déja")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                } else if (data == 1) {
+                    $("#resultat").show().html("inscription réussie connectez-vous à votre compte ...");
+                    setTimeout(function () {
+                        window.location.href = "../../../index.php";
+                    }, 2000);
+                    console.log(data);
+                }
+                else
+                {
+                    $("#resultat").html("erreur lors de upload file  !")
+                        .fadeIn().delay(2000).fadeOut();
+                    console.log(data);
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
