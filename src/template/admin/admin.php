@@ -104,9 +104,8 @@ $_SESSION['question'] = $db;
     <div class="container bleu ">
         <!--------------------chargement de page jquery---------------------->
         <div id="container" class="row ">
-
+      <?php include ('../../template/admin/listeJoueur.php')?>
             <!--you content--->
-
         </div>
     </div>
 </div>
