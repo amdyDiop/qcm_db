@@ -1,7 +1,6 @@
 <?php
-include('functionSQL.php');
+include('../../assets/sql/functionSQL.php');
 session_start();
-
 /**
  * if (isset($_FILES['file'])) {
  * if (existeLogin($_POST['login']) == "true") {

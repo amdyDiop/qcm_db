@@ -294,3 +294,54 @@ function previewFile() {
         reader.readAsDataURL(file);
     }
 }
+// navigation de du nav bar
+$(document).ready(function () {
+    $("#navbar").click(function (e) {
+        // un élément portant l'id "content" existe dans contenu.html
+        switch (e.target.id) {
+            case "listeJ":
+                $("#container").load("listeJoueur.php "); // un élément portant l'id "content" existe dans contenu.html
+                $("#listeJ").css("background-color", "#34BBE6");
+                $("#newAdmin").css("background-color", "#D96BCE");
+                $("#listeQ").css("background-color", "#D96BCE");
+                $("#newQuestion").css("background-color", "#D96BCE");
+                $("#listeAdmin").css("background-color", "#D96BCE");
+                break;
+            case "listeQ":
+                $("#container").load("listeQuestion.php "); // un élément portant l'id "content" existe dans contenu.html
+                $("#listeJ").css("background-color", "#D96BCE");
+                $("#newAdmin").css("background-color", "#D96BCE");
+                $("#listeQ").css("background-color", "#34BBE6");
+                $("#newQuestion").css("background-color", "#D96BCE");
+                $("#listeAdmin").css("background-color", "#D96BCE");
+                break;
+            case "newAdmin":
+                $("#container").load("newAdmin.php "); // un élément portant l'id "content" existe dans contenu.html
+                $("#listeJ").css("background-color", "#D96BCE");
+                $("#newAdmin").css("background-color", "#34BBE6");
+                $("#listeQ").css("background-color", "#D96BCE");
+                $("#newQuestion").css("background-color", "#D96BCE");
+                $("#listeAdmin").css("background-color", "#D96BCE");
+                break;
+            case "newQuestion":
+                $("#container").load("newQuestion.php "); // un élément portant l'id "content" existe dans contenu.html
+                $("#listeJ").css("background-color", "#D96BCE");
+                $("#newAdmin").css("background-color", "#D96BCE");
+                $("#listeQ").css("background-color", "#D96BCE");
+                $("#newQuestion").css("background-color", "#34BBE6");
+                $("#listeAdmin").css("background-color", "#D96BCE");
+                break;
+            case "listeAdmin":
+                $("#container").load("listeAdmin.php "); // un élément portant l'id "content" existe dans contenu.html
+                $("#listeJ").css("background-color", "#D96BCE");
+                $("#newAdmin").css("background-color", "#D96BCE");
+                $("#listeQ").css("background-color", "#D96BCE");
+                $("#newQuestion").css("background-color", "#D96BCE");
+                $("#listeAdmin").css("background-color", "#34BBE6");
+                break;
+            default:
+            //$("#listeJ").css("background-color", "#34BBE6");
+            //$("#container").load("listeJoueur.php ");
+        }
+    });
+});

@@ -1,9 +1,10 @@
 <?php
-
+include ('../../assets/sql/functionSQL.php');
 if ($_POST) {
+
     try {
-        $bd = new PDO('mysql:host=localhost;dbname=mini_projet_qcm;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        $data = $bd->query('SELECT * FROM user WHERE username="' . $_POST['login'] . '"');
+        $db =connexionDB();
+        $data = $db->query('SELECT * FROM user WHERE username="' . $_POST['login'] . '"');
         $user = $data->fetch();
         $data->closeCursor(); // Termine le traitement de la requête
     } catch (Exception $e) {
