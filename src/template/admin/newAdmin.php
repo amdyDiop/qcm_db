@@ -57,6 +57,7 @@
                                                type="password"
                                                name="cPassword" id="cPassword" value="<?= @$_POST['cPassword'] ?>"
                                                placeholder=" resaisir le mot de passe ">
+                                        <input type="hidden" value="joueur" id="admin">
                                         <span id="cPassword-error" class="error" for="label"></span>
 
                                     </div>
@@ -81,3 +82,5 @@
                     </form>
                 </div>
             </div>
+ <script src="../../../assets/js/inscription.js"></script>
+

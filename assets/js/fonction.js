@@ -23,7 +23,7 @@
     });
 */
 
-//connection  à la base de donnée avec ajax
+//login avec ajax
 $(document).ready(function () {
     $("#resultat").hide(1);
     $("#submit").click(function (e) {

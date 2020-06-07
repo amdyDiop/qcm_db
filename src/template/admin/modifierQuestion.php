@@ -44,7 +44,7 @@ $_SESSION['question'] = $db;
 <head>
     <title> Admin </title>
     <link rel="stylesheet" type="text/css" href="../../../assets/css/miniProjet.css">
-    <link rel="stylesheet" href="../../../assets/js/admin.js">
+    <link rel="stylesheet" href="../../../assets/js/inscription.js">
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
 </head>
@@ -157,6 +157,6 @@ $_SESSION['question'] = $db;
     </div>
 </body>
 <script src="../../../assets/js/fonction.js"></script>
-<script src="../../../assets/js/admin.js"></script>
+<script src="../../../assets/js/inscription.js"></script>
 
 </html>
