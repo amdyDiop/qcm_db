@@ -54,7 +54,6 @@ $(document).ready(function () {
         }
     });
 });
-
 $("#submitIns").click(function (e) {
     e.preventDefault();
     var login = $('#login').val();
@@ -62,7 +61,6 @@ $("#submitIns").click(function (e) {
     var nom = $('#nom').val();
     var password = $('#password').val();
     var role = $('#role').val();
-
     var file_data = $('#file').prop('files')[0];    //Fetch the file
     var form_data = new FormData();
     form_data.append("file",file_data);
@@ -73,7 +71,7 @@ $("#submitIns").click(function (e) {
     form_data.append("role",role);
     //Ajax to send file to upload
     $.ajax({
-        url:'http://localhost/mini-projetDB/src/controller/inscriptionController.php', // Un script PHP que l'on va créer juste après
+        url:'http://localhost/mini-projetDB/src/controller/inscriptionController.php',
         type: "POST",
         dataType: 'script',
         cache: false,

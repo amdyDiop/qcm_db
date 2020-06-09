@@ -1,6 +1,5 @@
 <?php
-$error = "";
-$errorFile = "";
+
 //inscription administrateur
 if (isset($_POST['prenom'])) {
     if (existeLogin($_POST['login']) == 0) {

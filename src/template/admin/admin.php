@@ -8,36 +8,6 @@ if (isset($_POST['deconnexion'])) {
     unset($_SESSION['admin']);
     header('Location: ../../../index.php');
 }
-if (isset($_GET['page'])) {
-    switch ($_GET['page']) {
-        case 'listeQuestion':
-            $_SESSION['url'] = "listeQuestion.php";
-            break;
-        case 'newAdmin':
-            $_SESSION['url'] = "newAdmin.php";
-            break;
-        case 'listeJoueur':
-            $_SESSION['url'] = "listeJoueur.php";
-            break;
-        case 'newQuestion':
-            $_SESSION['url'] = "newQuestion.php";
-            break;
-        case 'modifier_question':
-            $_SESSION['url'] = "modifierQuestion.php";
-            break;
-    }
-}
-if (isset($_GET['liste'])) {
-    include '../../controller/fonction.php';
-}
-include '../../controller/joueurController.php';
-include '../../controller/adminController.php';
-$_SESSION['joueurs'] = getJoueur();
-$files = '../../../assets/json/question.json';
-$db = file_get_contents($files);
-$db = json_decode($db, true);
-$_SESSION['question'] = $db;
-//print_r( $_SESSION['question']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -133,6 +103,11 @@ $_SESSION['question'] = $db;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
 <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js "></script>
 <script src="../../../assets/js/fonction.js "></script>
+
+
+<script>
+
+</script>
 </body>
 
 </html>
