@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     let offset = 0;
     var teste = 0;
     const tbody = $('#tbody');

@@ -169,3 +169,7 @@
             overflow-x: hidden;
 
         }
+      .scrollZone{
+          height: 467px;
+          overflow-y: auto;
+      }

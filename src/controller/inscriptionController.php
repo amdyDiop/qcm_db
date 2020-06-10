@@ -32,8 +32,10 @@ if (isset($_FILES['file'])) {
                         'image' => $image,
                         'verrou' => 0,
                     ));
+
                     //initialisation score du joueur avec les deux function definie dans le dossier functionSQL.php
-                    scoreIni(getID($login));
+                    if ($role=="joueur")
+                     scoreIni(getID($login));
 
                 } catch (Exception $e) {
                     die('Erreur : ' . $e->getMessage());

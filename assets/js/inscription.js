@@ -118,7 +118,7 @@ $("#submitIns").click(function (e) {
             } else if (data == 1) {
                 $("#resultat").show().html("inscription réussie connectez-vous à votre compte ...")
                     .fadeIn().delay(2000).fadeOut();
-                $('#submitIns')[0].reset();
+                $('#submitIns').reset();
                if (role=="joueur")
                    setTimeout(function () {
                     window.location.href = "../../../index.php";

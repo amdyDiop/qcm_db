@@ -1,86 +1,43 @@
 $(document).ready(function () {
     let offset = 0;
     var teste = 0;
-    const tbody = $('#tbody');
+    const tContent = $('#tContent');
     $.ajax({
         type: "POST",
-        url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
+        url: "http://localhost/mini-projetDB/src/controller/listeQuestionController.php",
         data: {limit: 5, offset: offset, teste: teste},
         dataType: 'JSON',
         success: function (data) {
+            console.log(data);
             if ($.trim(data)) {
-                tbody.html('');
-                printData(data, tbody);
+                tContent.html('');
+                printData(data, tContent);
                 offset += 5;
             } else console.log(data);
         }
     });
-    $("#next").click(function () {
-        var teste = 0;
-        $.ajax({
-            type: "POST",
-            url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
-            data: {limit: 5, offset: offset, teste: teste},
-            dataType: 'JSON',
-            success: function (data) {
-                tbody.html('');
-                printData(data, tbody);
-                offset += 5;
-            }
-        });
-    });
-    $("#precedent").click(function () {
-        //la variable teste permet d'eèxecuté deux un sql selons la valeur de teste
-        var teste = 1;
-        $.ajax({
-            type: "POST",
-            url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
-            data: {limit: 5, offset: offset, teste: teste},
-            dataType: 'JSON',
-            success: function (data) {
-                if ($.trim(data)) {
-                    tbody.html('');
-                    printData(data, tbody);
-                    offset -= 5;
-                } else console.log(data);
-            }
-        });
-    });
+    function printData(data, tContent) {
+        var reponseVrais= [];
+        $.each(data, function (indice, questions) {
+            var nombre = questions.reponses.length;
+            var element =` <tr class="">
+                 <td id="user_id">${questions.question}</td>
+                 <td >${questions.point} pts</td>
+                 <td >${questions.type}</td>
+                 <td > ${nombre} reponse</td><td> `;
+              $.each(questions.reponses, function(indice,reponses){
+              if(reponses.etat==1){
+                  element += `${reponses.reponse} `
+              }
+            });
+           element += '  </td> ' +
+               '  <td class="border-right mr-4 border-primary justify-content-sm-center">\n' +
+               '   <button class="btn mauve"><i class="fa fa-eye " style="color: white"></i></button>\n' +
+               '   <button class="btn mauve"><i class="fa fa-trash" style="color: white"></i></button>\n' +
+               ' </td> ' +
+               '</tr>';
 
-    function printData(data, tbody) {
-        $.each(data, function (indice, user) {
-            if (user.verrou == 0) {
-                tbody.append(`
-             <tr class="text-center">
-                 <td id="user_id">${user.id}</td>
-                 <td >${user.prenom}</td>
-                 <td >${user.nom}</td>
-                 <td >${user.score}</td>
-                 <td >
-                    <img src="../../../assets/Images/user/${user.image}" class="rounded-circle " alt=""
-                      width="50" height="50">
-                 </td>
-                 <td><button id="btnSelect" class="btn btn-sm mauve"><i id="icon" class="fa fa-unlock" style="color: white"></i></button></td>
-             </tr>
-         `);
-
-            } else {
-                tbody.append(`
-             <tr class="text-center">
-                 <td id="user_id">${user.id}</td>
-                 <td >${user.prenom}</td>
-                 <td >${user.nom}</td>
-                 <td >${user.score}</td>
-                 <td >
-                    <img src="../../../assets/Images/user/${user.image}" class="rounded-circle " alt=""
-                      width="50" height="50">
-                 </td>
-                 <td><button id="btnSelect" class="btn btn-sm mauve"><i id="icon" class="fa fa-lock" style="color: red"></i></button></td>
-             </tr>
-         `);
-            }
-
-
+            tContent.append(element);
         });
     }
 });

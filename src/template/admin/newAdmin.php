@@ -57,7 +57,6 @@
                                                type="password"
                                                name="cPassword" id="cPassword" value="<?= @$_POST['cPassword'] ?>"
                                                placeholder=" resaisir le mot de passe ">
-                                        <input type="hidden" value="joueur" id="admin">
                                         <span id="cPassword-error" class="error" for="label"></span>
 
                                     </div>
@@ -72,10 +71,11 @@
                             </div>
                         <div class="card col-4 border-white">
                             <div class="form-group ">
-                                <img class="roundj" src="../../../assets/Images/user.png" alt="avarar">
+                                <img class="round" src="../../../assets/Images/user.png" alt="avarar">
                                 <input class="form-control-file inputFile bg-primary-" type="file" name="file" id="file"
                                        value="<?= @$_POST['file'] ?>" onchange="previewFile()">
                                 <div id="file-error" class="error" for="label"></div>
+                                <input type="hidden" value="admin" id="role" name="role">
                             </div>
                         </div>
                         </div>

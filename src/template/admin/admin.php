@@ -104,7 +104,6 @@ if (isset($_POST['deconnexion'])) {
 <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js "></script>
 <script src="../../../assets/js/fonction.js "></script>
 
-
 <script>
 
 </script>

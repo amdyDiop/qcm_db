@@ -60,7 +60,7 @@ if ($type == "multiple") {
 
 }
 //si le type de reponse et radio
-if ($type == "texte") {
+else if ($type == "texte") {
     if (@$_POST['texte']) {
         insertData($question, $type, $point); //inssertion des donneée au niveau de la base de donnée
         $id = findIDQuestion($question);      // recupération de id au niveau de la base de donnée
@@ -80,7 +80,9 @@ if ($type == "texte") {
         }
     } else
         echo "ajouter une reponse";
-} else if (isset($_POST['radio'])) {
+}
+
+else if (isset($_POST['radio'])) {
     // vérification si la bonne réponse a èté choisie
     function isNotEmpty($champ)
     {
@@ -147,6 +149,7 @@ if ($type == "texte") {
             }
         } else echo "au moins deux réponse";
 
-    } else echo 'check vide';
+    }
+    else echo 'check vide';
 } else echo "check vide";
 ?>

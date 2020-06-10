@@ -1,45 +1,17 @@
-<div class="card col-10 bg-primary border-primary">
+<div id="scrollZone" class="card col-10 bg-primary border-primary scrollZone">
+    <div id="message"></div>
     <table class="table table-bordered table-hover text-center mt-1 ">
         <thead class="bleu">
         <tr>
-            <th scope="col-3">Prénom</th>
+            <th scope="col">Id</th>
+            <th scope="col">Prénom</th>
             <th scope="col">Nom</th>
             <th scope="col">image</th>
             <th scope="col">Action</th>
-
         </tr>
         </thead>
-        <tbody>
-        <tr class="mauve">
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-           <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
-        </tr>
-        <tr class="mauve">
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
-        </tr>
-        <tr class="mauve">
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
-        </tr>
-        <tr class="mauve">
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>@mdo</td>
-            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
-        </tr>
-        <tr class="mauve">
-            <td>Mark</td>
-            <td>Mark</td>
-            <td>@mdo</td>
-            <td><button class="btn mauve"><i class=" fa fa-edit" style="color: white"></i></button></td>
-        </tr>
+        <tbody id="tbody">
+
         </tbody>
     </table>
 </div>
@@ -51,3 +23,17 @@
         <button class="button mt-4 roundButton" type="button"><</button>
     </div>
 </div>
+<div class="modal" id="admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div id="user">
+
+        </div>
+    </div>
+</div>
+<!-- Link to open the modal -->
+<!--p><a href="#admin" rel="modal:open">Open Modal</a></p-->
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
+<script src="../../../assets/js/listeAdmin.js"></script>
