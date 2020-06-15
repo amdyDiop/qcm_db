@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     let offset = 0;
     const tbody = $('#tbody');
     const user =$('#user');
@@ -14,6 +15,7 @@ $(document).ready(function () {
             offset += 5;
         }
     });
+
     tbody.on('click', 'button', function () {
        // $(this).parents("tr").hide();
         var id = $(this).attr('id');

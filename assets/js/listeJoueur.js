@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     let offset = 0;
     var teste = 0;
     const tbody = $('#tbody');
@@ -24,32 +23,34 @@ $(document).ready(function () {
             data: {limit: 5, offset: offset, teste: teste},
             dataType: 'JSON',
             success: function (data) {
-                tbody.html('');
-                printData(data, tbody);
-                offset += 5;
-            }
-        });
-    });
-    $("#precedent").click(function () {
-        //la variable teste permet d'eèxecuté deux un sql selons la valeur de teste
-        var teste = 1;
-        $.ajax({
-            type: "POST",
-            url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
-            data: {limit: 5, offset: offset, teste: teste},
-            dataType: 'JSON',
-            success: function (data) {
-                if ($.trim(data)) {
+                if (!$.trim(data)){
+                    offset=0;
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
+                        data: {limit: 5, offset: offset, teste: teste},
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if ($.trim(data)) {
+                                tbody.html('');
+                                printData(data, tbody);
+                                offset += 5;
+                            } else console.log(data);
+                        }
+                    });
+                }else
+                {
                     tbody.html('');
                     printData(data, tbody);
-                    offset -= 5;
-                } else console.log(data);
+                    offset += 5;
+                }
+
             }
         });
     });
-
     function printData(data, tbody) {
         $.each(data, function (indice, user) {
+          //  console.log(user.verrou);
             if (user.verrou == 0) {
                 tbody.append(`
              <tr class="text-center">
@@ -61,10 +62,9 @@ $(document).ready(function () {
                     <img src="../../../assets/Images/user/${user.image}" class="rounded-circle " alt=""
                       width="50" height="50">
                  </td>
-                 <td><button id="btnSelect" class="btn btn-sm mauve"><i id="icon" class="fa fa-unlock" style="color: white"></i></button></td>
+                 <td><button id="btnSelect_${user.id}" class="btn btn-sm mauve"><i id="icon" class="fa fa-unlock" style="color: white"></i></button></td>
              </tr>
          `);
-
             } else {
                 tbody.append(`
              <tr class="text-center">
@@ -76,12 +76,10 @@ $(document).ready(function () {
                     <img src="../../../assets/Images/user/${user.image}" class="rounded-circle " alt=""
                       width="50" height="50">
                  </td>
-                 <td><button id="btnSelect" class="btn btn-sm mauve"><i id="icon" class="fa fa-lock" style="color: red"></i></button></td>
+                 <td><button  id="btnSelect_${user.id}" class="btn btn-sm mauve"><i id="icon" class="fa fa-lock" style="color: red"></i></button></td>
              </tr>
          `);
             }
-
-
         });
     }
 });
@@ -93,9 +91,7 @@ $(document).ready(function () {
             const st = scrollZone[0].scrollTop;
             const sh = scrollZone[0].scrollHeight;
             const ch = scrollZone[0].clientHeight;
-
             console.log(st,sh, ch);
-
             if(sh-st <= ch){
                 $.ajax({
                     type: "POST",
@@ -109,16 +105,16 @@ $(document).ready(function () {
                 });
             }
         })*/
-
-
 // verrou joueur
 $(document).ready(function () {
     $("#resultat").hide(1);
-    $("#tbody").on('click', '#btnSelect', function () {
+    $("#tbody").on('click', 'button', function () {
         if (confirm('Êtes-vous sûr?')) {
             // recupération de la valeur d'un td
-            var td = $(this).closest("tr");
-            var id = td.find("#user_id").html(); // get current row 1st table cell TD value
+            var idSelect = $(this).attr("id");
+            alert(idSelect);
+            var tab= idSelect.split("_");
+            var id = tab[1]; // recupére id du joueur
             // alert(id);
             $.ajax({
                 type: "POST",
@@ -130,6 +126,9 @@ $(document).ready(function () {
                         if (data ==1){
                             $("#resultat").html("le joueur a été verrouillé!")
                                 .fadeIn().delay(2000).fadeOut();
+                       $(idSelect).removeClass("fa fa-unlook");
+                            $(idSelect).removeClass("fa fa-look");
+
                         }
                         else{
                             $("#resultat").html("le joueur a été déverrouillé!")

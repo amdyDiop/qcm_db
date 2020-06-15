@@ -6,14 +6,21 @@ $(document).ready(function () {
         type: "POST",
         url: "http://localhost/mini-projetDB/src/controller/listeQuestionController.php",
         data: {limit: 5, offset: offset, teste: teste},
-        dataType: 'JSON',
+        dataType: 'json',
         success: function (data) {
-            console.log(data);
+
             if ($.trim(data)) {
+                console.log('success');
+
+                console.log(data);
                 tContent.html('');
                 printData(data, tContent);
                 offset += 5;
             } else console.log(data);
+        },
+        error: function (data) {
+            console.log('erreur');
+            console.log(data)
         }
     });
     function printData(data, tContent) {
@@ -65,39 +72,3 @@ $(document).ready(function () {
                 });
             }
         })*/
-
-
-// verrou joueur
-$(document).ready(function () {
-    $("#resultat").hide(1);
-    $("#tbody").on('click', '#btnSelect', function () {
-        if (confirm('Êtes-vous sûr?')) {
-            // recupération de la valeur d'un td
-            var td = $(this).closest("tr");
-            var id = td.find("#user_id").html(); // get current row 1st table cell TD value
-            // alert(id);
-            $.ajax({
-                type: "POST",
-                url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
-                data: {id: id},
-                dataType: 'JSON',
-                success: function (data) {
-                    if ($.trim(data)) {
-                        if (data ==1){
-                            $("#resultat").html("le joueur a été verrouillé!")
-                                .fadeIn().delay(2000).fadeOut();
-                        }
-                        else{
-                            $("#resultat").html("le joueur a été déverrouillé!")
-                                .fadeIn().delay(2000).fadeOut();
-                        }
-                    }
-                },
-                error: function () {
-                    console.log('erreur lors de l\'envoie des donnée  ajax');
-                }
-            });
-        }
-
-    });
-});

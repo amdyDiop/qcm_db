@@ -16,12 +16,10 @@
     </table>
 </div>
 <div class="card col-2 bg-primary border-primary ">
-    <div id="next" class="row justify-content-center pt-4 mb-5 mt-4 ">
-        <input class="button mt-4  roundButton" type="submit" value=">">
+    <div id="next" class="row justify-content-center pt-4 mb-5  ">
+        <input class="button   roundButton" type="submit" value=">">
     </div>
-    <div class="row justify-content-center pt-4 mt-5">
-        <button id="precedent" class="button mt-4 roundButton" type="button"><</button>
-    </div>
+
 </div>
 
 

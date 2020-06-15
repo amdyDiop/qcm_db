@@ -71,11 +71,12 @@
                             </div>
                         <div class="card col-4 border-white">
                             <div class="form-group ">
-                                <img class="round" src="../../../assets/Images/user.png" alt="avarar">
+                                <div>
+                                <img class="roundAdmin" src="../../../assets/Images/user.png" alt="avarar">
                                 <input class="form-control-file inputFile bg-primary-" type="file" name="file" id="file"
                                        value="<?= @$_POST['file'] ?>" onchange="previewFile()">
                                 <div id="file-error" class="error" for="label"></div>
-                                <input type="hidden" value="admin" id="role" name="role">
+                                <input type="hidden" value="admin" id="role" name="role"></div>
                             </div>
                         </div>
                         </div>

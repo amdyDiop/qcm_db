@@ -103,10 +103,6 @@ if (isset($_POST['deconnexion'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
 <script src="../../../assets/bower_components/jquery-validation/dist/jquery.validate.min.js "></script>
 <script src="../../../assets/js/fonction.js "></script>
-
-<script>
-
-</script>
 </body>
 
 </html>

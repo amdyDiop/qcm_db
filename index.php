@@ -1,5 +1,4 @@
 <?php
-//include ('src/controller/indexController.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">

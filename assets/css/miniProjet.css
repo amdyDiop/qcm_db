@@ -1,175 +1,291 @@
-        body {
-            background: url('../Images/bg-01.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-        
-        .button {
-            background: #3494E6;
-            border: 1px solid #FFFFFF;
-            box-sizing: border-box;
-            border-radius: 369px;
-            height: 54px;
-            color: #FFFFFF;
-            font-size: 32px;
-            line-height: 32px;
-            text-align: center;
-        }
-        
-        .placeholder {
-            font-family: Righteous;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 40px;
-            line-height: 50px;
-            text-align: center;
-        }
-        
-        .login {
-            font-family: Righteous;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 70px;
-            line-height: 87px;
-            text-align: center;
-        }
-        
-        form .error {
-            color: #ff0000;
-        }
-        
-        .inscription {
-            font-family: Righteous;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 53px;
-            line-height: 66px;
-            text-align: center;
-        }
-        
-        .Righteous {
-            font-family: Righteous;
-        }
-        
-        .bgLogin {
-            background-image: url('../Images/Icones/ic-login.png');
-            background-repeat: no-repeat;
-            background-size: 8%;
-            background-position: 8px;
-        }
-        
-        .bgPassword {
-            background-image: url('../Images/Icones/ic-password.png');
-            background-repeat: no-repeat;
-            background-size: 8%;
-            background-position: 8px;
-        }
-        /**-----------------------------------------inscription-----------------------------------------------------*/
-        
-        .round {
-            float: right;
-            margin-right: 5%;
-            margin-top: 10%;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            border: groove;
-        }
-        
-        input[type="file" i] {
-            float: left;
-            margin-left: -20%;
-            background-color: #AD44F6;
-        }
-        
-        .mauve {
-            background-color: #D96BCE;
-        }
-        
-        .bleu {
-            background-color: #34BBE6;
-            border-radius: 30px;
-        }
-        
-        .bleuf {
-            background-color: #56CCF2;
-        }
-        /**-------------------------------------------admin----------------------------------*/
-        
-        .roundButton {
-            border-radius: 50%;
-            width: 40%;
-            height: 125%;
-            background-color: #D96BCE;
-        }
-        .fa {
-            font-size:15px !important;
-            width: 90%;
-        }
-        /************************************ partiejouer----------------------------------------------*/
-        
-        .bg-border {
-            background: #2D9CDB;
-            border-radius: 32px;
-        }
-        
-        .number_page {
-            border-radius: 60%;
-            width: 10%;
-            height: 20%;
-            background: #2D9CDB;
-        }
-        .roundButtonJoueur {
-            text-align: center;
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            margin-left: -3%;
-            background-color: #D96BCE;
-        }
-        .roundButtonJoueurR {
-            text-align: center;
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            margin-right: -3%;
-            float: right;
-            background-color: #D96BCE;
-        }
-        .mt-n1 {
-            margin-top: -0.25rem !important;
-        }.mt-n2 {
-             margin-top: -2.25rem !important;
-         }
-         .noir{
-             background-color: black;
-         }
-        .roundj {
-            float: right;
-            margin-right: 5%;
-            margin-top: 1%;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            border: groove;
-        }
-        .checkbox{
-            width: 40px;
-            height: 40px;
-        }
-.ml-n1{
+body {
+    background: url('../Images/bg-01.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.button {
+    margin-top: 6%;
+    background: #3494E6;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 369px;
+    height: 53px;
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.buttonNext {
+    margin-top: 6%;
+    background: #3494E6;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 369px;
+    height: 53px;
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.placeholder {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.login {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 87px;
+    text-align: center;
+}
+
+form .error {
+    color: #ff0000;
+}
+
+.inscription {
+    font-family: Righteous;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 53px;
+    line-height: 66px;
+    text-align: center;
+}
+
+.Righteous {
+    font-family: Righteous;
+}
+
+.bgLogin {
+    background-image: url('../Images/Icones/ic-login.png');
+    background-repeat: no-repeat;
+    background-size: 8%;
+    background-position: 8px;
+}
+
+.bgPassword {
+    background-image: url('../Images/Icones/ic-password.png');
+    background-repeat: no-repeat;
+    background-size: 8%;
+    background-position: 8px;
+}
+
+/**-----------------------------------------inscription-----------------------------------------------------*/
+
+
+.round {
+    float: right;
+    margin-right: -30%;
+    margin-top: 10%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: groove;
+}
+
+.roundAdmin {
+    float: right;
+    margin-right: 13%;
+    margin-top: -11%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: groove;
+}
+
+input[type="file" i] {
+    width: 134px;
+    margin-left: -79px;
+    background-color: #AD44F6;
+}
+
+.admin input[type="file" i] {
+    width: 134px;
+    margin-left: 130px;
+    background-color: #AD44F6;
+}
+
+.file {
+    width: 134px;
+    margin-left: -79px;
+    background-color: #AD44F6;
+}
+
+.mauve {
+    background-color: #D96BCE;
+}
+
+.bleu {
+    background-color: #34BBE6;
+    border-radius: 30px;
+}
+
+.bleuf {
+    background-color: #56CCF2;
+}
+
+/**-------------------------------------------admin----------------------------------*/
+
+.roundButton {
+    border-radius: 50%;
+    width: 50%;
+    height: 70%;
+    background-color: #D96BCE;
+}
+
+.fa {
+    font-size: 15px !important;
+    width: 90%;
+}
+
+/************************************ partiejouer----------------------------------------------*/
+
+.bg-border {
+    background: #2D9CDB;
+    border-radius: 32px;
+}
+
+.number_page {
+    border-radius: 60%;
+    width: 10%;
+    height: 20%;
+    background: #2D9CDB;
+}
+
+.roundButtonJoueur {
+    text-align: center;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: -3%;
+    background-color: #D96BCE;
+}
+
+.roundButtonJoueurR {
+    text-align: center;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-right: -3%;
+    float: right;
+    background-color: #D96BCE;
+}
+
+.mt-n1 {
+    margin-top: -0.25rem !important;
+}
+
+.mt-n2 {
+    margin-top: -2.25rem !important;
+}
+
+.noir {
+    background-color: black;
+}
+
+.roundj {
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: groove;
+}
+
+.checkbox {
+    width: 40px;
+    height: 40px;
+}
+
+.ml-n1 {
     margin-left: -6%;
 }
-/**---------------------------------------------ADD QUESTION--------------------------------------------------------------------*/
-        .scrollADD{
-            height: 367px;
-            overflow-y: auto;
-            overflow-x: hidden;
 
-        }
-      .scrollZone{
-          height: 467px;
-          overflow-y: auto;
-      }
+/**---------------------------------------------ADD QUESTION--------------------------------------------------------------------*/
+.scrollADD {
+    height: 367px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.scrollZone {
+    height: 467px;
+    overflow-y: auto;
+}
+
+
+/**---------------------------------------------ADD QUESTION--------------------------------------------------------------------*/
+
+.texteScore {
+    margin-top: 30%;
+    font-size: 70px;
+    font-style: italic;
+    font-family: "Agency FB", fantasy;
+    text-align: center;
+}
+
+.valide {
+    background-image: url("../Images/Icones/valide.png");
+    float: left;
+    width: 15px;
+    height: 23px;
+}
+
+.invalide {
+    background-image: url("../Images/Icones/invalide.png");
+    float: left;
+    width: 23px;
+    height: 23px;
+}
+
+
+.resultat {
+    margin-left: 10%;
+    width: 95%;
+    height: 44px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+    background-color: #f2f2f2;
+    color: #48ae52;
+}
+
+.felicitation {
+    /* basic font setting */
+    font: bold 3em Impact, sans-serif;
+    text-align: center;
+    letter-spacing: 2px
+}
+
+.simple {
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.double {
+    text-shadow: 2px 2px 0 white,
+    4px 4px 0 black;
+}
+
+.feu {
+    color: white;
+    text-shadow: 0 0 2px #fefcc9,
+    1px -1px 3px #4874fe,
+    -2px -2px 4px #ffae34,
+    2px -4px 5px #ec760c,
+    -2px -6px 6px #cd4606,
+    0 -8px 7px #973716,
+    1px -9px 8px #451b0e;
+}
