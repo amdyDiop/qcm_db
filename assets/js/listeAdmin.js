@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     let offset = 0;
     const tbody = $('#tbody');
-    const user =$('#user');
+    const user = $('#user');
     $.ajax({
         type: "POST",
         url: "http://localhost/mini-projetDB/src/controller/listeAdminController.php",
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 
     tbody.on('click', 'button', function () {
-       // $(this).parents("tr").hide();
+        // $(this).parents("tr").hide();
         var id = $(this).attr('id');
         const tab = id.split("_");
         if (tab[0] == "supp") {
@@ -31,15 +31,14 @@ $(document).ready(function () {
                     success: function (data) {
                         var message = $('#message');
                         console.log(data);
-                        if (data==1){
+                        if (data == 1) {
                             console.log("l'administrateur a été supprimé");
                             $(this).parents('tr').hide();
 
                             message.addClass("alert alert-success");
                             message.html("l'administrateur a été supprimé");
                             message.fadeIn().delay(3000).fadeOut();
-                        }
-                        else{
+                        } else {
                             message.addClass("alert alert-danger");
                             message.html("Erreur l'ors de la suppression");
                             message.fadeIn().delay(2000).fadeOut();
@@ -53,21 +52,47 @@ $(document).ready(function () {
             }
         }
         else {
-            console.log(tab[1] + " sera vusualisée");
             $.ajax({
                 type: "POST",
                 url: "http://localhost/mini-projetDB/src/controller/listeAdminController.php",
                 data: {infoAdmin: tab[1]},
                 dataType: 'json',
                 success: function (data) {
-                    var message = $('#message');
+                    console.log(data);
                     user.html("");
                     printAdmin(data, user);
-                }
+
+                },
+                error: function (data) {
+                    console.log(data);
+                },
+
+
+            });
+
+            //console.log(tab[1] + " sera vusualisée");
+            user.on('click', '#editAdmin', function () {
+                var data = $('#modalForm').serialize();
+                // data.push({name: 'id', value: tab[1]});
+                //data.append("id",tab[1]);
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/mini-projetDB/src/controller/listeAdminController.php",
+                    data: data,
+                    dataType: 'text',
+                    success: function (data) {
+                        console.log(data);
+                        if (!$.trim(data)){
+                            console.log(data);
+                            user.html("");
+                            printAdmin(data, user);
+                        }
+
+                    }
+                });
             });
         }
     });
-//scloll
     //  Scroll
     const scrollZone = $('#scrollZone');
     scrollZone.scroll(function () {
@@ -75,7 +100,7 @@ $(document).ready(function () {
         const st = scrollZone[0].scrollTop;
         const sh = scrollZone[0].scrollHeight;
         const ch = scrollZone[0].clientHeight;
-        // console.log(st,sh, ch);
+        //  console.log(st,sh, ch);
         if (sh - st <= ch) {
             $.ajax({
                 type: "POST",
@@ -83,12 +108,14 @@ $(document).ready(function () {
                 data: {limit: 5, offset: offset},
                 dataType: "json",
                 success: function (data) {
+                    tbody.html("");
                     printData(data, tbody);
                     offset += 5;
                 }
             });
         }
     });
+
     function printData(data, tbody) {
         $.each(data, function (indice, user) {
             tbody.append(`
@@ -110,7 +137,6 @@ $(document).ready(function () {
         });
     }
 
-
     function printAdmin(data, user) {
         $.each(data, function (indice, admin) {
             user.append(`
@@ -120,7 +146,7 @@ $(document).ready(function () {
                     <img src="../../../assets/Images/user/${admin.image}" style="width: 70px;height: 70px";>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="modalForm">
                         <div class=" row form-group">
                             <div class="col-ms-6">
                                 <label for="prenom" class="col-form-label">Prénom:</label>
@@ -150,7 +176,7 @@ $(document).ready(function () {
                                 <input type="text" class="form-control" id="rele" name="role" value="${admin.role}">
                             </div>
                             <div class="col-ms-6">
-                                <button type="button" class="btn btn-primary mt-5">Modifier changement </button>
+                                <button type="button"  id="editAdmin"  class="btn btn-primary mt-5">Modifier changement </button>
 
                             </div>
                         </div>

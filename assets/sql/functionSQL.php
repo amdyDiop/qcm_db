@@ -65,6 +65,36 @@ function getID($login)
     return $id;
 }
 
+function getAdmins($limit,$offset){
+    try {
+        $db = connexionDB();
+        $sql = "SELECT u.id ,u.prenom,u.nom, u.image FROM user u  
+                     WHERE u.role='admin' 
+                     ORDER BY id DESC LIMIT {$limit} 
+                       OFFSET {$offset}";
+        $data = $db->query($sql);
+        $user = $data->fetchAll(2);
+        $data->closeCursor(); // Termine le traitement de la requête
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+        return $user;
+}
+
+function getAdminById($id){
+    try {
+        $db = connexionDB();
+        $sql = "SELECT u.id ,u.prenom,u.nom, u.image, u.role,u.username FROM user u  
+                     WHERE u.id={$id} ";
+        $data = $db->query($sql);
+        $user = $data->fetchAll(2);
+        $data->closeCursor(); // Termine le traitement de la requête
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    return $user;
+}
+
 
 //echo ' id baa gui noodou fils '.getID("");
 //scoreIni(getID('joueur'))
@@ -203,5 +233,35 @@ function selectQuestionJeux($limit)
 
     return $questions;
 }
+
+
+function deleteReponses($id)
+{
+    try {
+
+        $db = connexionDB();
+        $sql = "DELETE r.* from reponses r INNER JOIN   questions q  ON r.questions_id = q.id where r.questions_id = ${id}";
+        $data = $db->query($sql);
+        $data->closeCursor(); // Termine le traitement de la requête
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+function deleteQuestion($id)
+{
+    try {
+
+        $db = connexionDB();
+        $sql = "DELETE q.* from questions q WHERE q.id = ${id}";
+        $data = $db->query($sql);
+        $data->closeCursor(); // Termine le traitement de la requête
+
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+
 
 ?>

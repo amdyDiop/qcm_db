@@ -23,8 +23,8 @@ $(document).ready(function () {
             data: {limit: 5, offset: offset, teste: teste},
             dataType: 'JSON',
             success: function (data) {
-                if (!$.trim(data)){
-                    offset=0;
+                if (!$.trim(data)) {
+                    offset = 0;
                     $.ajax({
                         type: "POST",
                         url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
@@ -38,8 +38,7 @@ $(document).ready(function () {
                             } else console.log(data);
                         }
                     });
-                }else
-                {
+                } else {
                     tbody.html('');
                     printData(data, tbody);
                     offset += 5;
@@ -48,9 +47,10 @@ $(document).ready(function () {
             }
         });
     });
+
     function printData(data, tbody) {
         $.each(data, function (indice, user) {
-          //  console.log(user.verrou);
+            //  console.log(user.verrou);
             if (user.verrou == 0) {
                 tbody.append(`
              <tr class="text-center">
@@ -76,7 +76,7 @@ $(document).ready(function () {
                     <img src="../../../assets/Images/user/${user.image}" class="rounded-circle " alt=""
                       width="50" height="50">
                  </td>
-                 <td><button  id="btnSelect_${user.id}" class="btn btn-sm mauve"><i id="icon" class="fa fa-lock" style="color: red"></i></button></td>
+                 <td><button  id="btnSelect_${user.id}" class="btn btn-sm mauve"><i id="icon" class="fa fa-lock" style="color: white"></i></button></td>
              </tr>
          `);
             }
@@ -108,39 +108,50 @@ $(document).ready(function () {
 // verrou joueur
 $(document).ready(function () {
     $("#resultat").hide(1);
-    $("#tbody").on('click', 'button', function () {
-        if (confirm('Êtes-vous sûr?')) {
-            // recupération de la valeur d'un td
-            var idSelect = $(this).attr("id");
-            alert(idSelect);
-            var tab= idSelect.split("_");
-            var id = tab[1]; // recupére id du joueur
-            // alert(id);
-            $.ajax({
-                type: "POST",
-                url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
-                data: {id: id},
-                dataType: 'JSON',
-                success: function (data) {
-                    if ($.trim(data)) {
-                        if (data ==1){
-                            $("#resultat").html("le joueur a été verrouillé!")
-                                .fadeIn().delay(2000).fadeOut();
-                       $(idSelect).removeClass("fa fa-unlook");
-                            $(idSelect).removeClass("fa fa-look");
+    $("#tbody")
+        .on('click', 'button', function () {
+            if (confirm('Êtes-vous sûr?')) {
+                // recupération de la valeur d'un td
+                var idSelect = $(this).attr("id");
+               // alert(idSelect);
+                var tab = idSelect.split("_");
+                var id = tab[1]; // recupére id du joueur
+               // alert('tr #'+idSelect);
+                // $(this).children('i').addClass();
+                var icon = $(this).children('i');
+                if (icon.hasClass("fa-unlock")){
+                    icon.removeClass();
+                    icon.addClass("fa fa-lock");
+                    icon.css("color:red")
+                }else {
+                    icon.removeClass();
+                    icon.addClass("fa fa-unlock ")
 
-                        }
-                        else{
-                            $("#resultat").html("le joueur a été déverrouillé!")
-                                .fadeIn().delay(2000).fadeOut();
-                        }
-                    }
-                },
-                error: function () {
-                    console.log('erreur lors de l\'envoie des donnée  ajax');
                 }
-            });
-        }
 
-    });
+                // alert(id);
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/mini-projetDB/src/controller/listeJoueurController.php",
+                    data: {id: id},
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if ($.trim(data)) {
+                            if (data == 1) {
+                                $("#resultat").html("le joueur a été verrouillé!")
+                                    .fadeIn().delay(2000).fadeOut();
+                            } else {
+                                $("#resultat").html("le joueur a été déverrouillé!")
+                                    .fadeIn().delay(2000).fadeOut();
+                            }
+                        }
+                    },
+                    error: function () {
+                        console.log('erreur lors de l\'envoie des donnée  ajax');
+                    }
+                });
+            }
+
+        })
+
 });

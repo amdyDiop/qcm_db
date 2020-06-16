@@ -5,36 +5,37 @@ include('../../assets/sql/functionSQL.php');
 if (isset($_POST['limit'])) {
     $limit = $_POST['limit'];
     $offset = $_POST['offset'];
-        try {
-            $db = connexionDB();
-            $sql = "SELECT u.id ,u.prenom,u.nom, u.image FROM user u  
-                     WHERE u.role='admin' 
-                     ORDER BY id DESC LIMIT {$limit} 
-                       OFFSET {$offset}";
-            $data = $db->query($sql);
-            $user = $data->fetchAll(2);
-            echo json_encode($user);
-            $data->closeCursor(); // Termine le traitement de la requête
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
+      echo json_encode(getAdmins($limit,0));
     }
-else if (isset($_POST['infoAdmin'])) {
 
-    $id =$_POST['infoAdmin'];
-   try {
+elseif (isset($_POST['infoAdmin'])) {
+    $id = $_POST['infoAdmin'];
+    echo json_encode(getAdminById($id));
+}
+else if (isset($_POST['username'])) {
+
+    $id =$_POST['id'];
+    $username =$_POST['username'];
+    $prenom =$_POST['prenom'];
+    $nom =$_POST['nom'];
+    $role =$_POST['role'];
+
+    try {
+
         $db = connexionDB();
         // modification de l'atribut verrou du joueur
-        $sql = "SELECT  * FROM user where id= ${id} ";
+        $sql = "UPDATE  SET username = ${username}, prenom = ${prenom},nom = ${nom}
+        role = ${role} WHERE id= ${id} ";
        $data = $db->query($sql);
-       $user = $data->fetchAll(2);
-       echo json_encode($user);
        $data->closeCursor(); // Termine le traitement de la requête
         //  echo 1;
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
+    echo 1;
 }
+
+
 else if (isset($_POST['id'])) {
     $id =$_POST['id'];
     try {

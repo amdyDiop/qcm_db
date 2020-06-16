@@ -289,3 +289,10 @@ input[type="file" i] {
     0 -8px 7px #973716,
     1px -9px 8px #451b0e;
 }
+
+
+.listQuestionScroll{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 410px;
+}

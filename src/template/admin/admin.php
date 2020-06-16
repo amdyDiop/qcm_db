@@ -73,7 +73,7 @@ if (isset($_POST['deconnexion'])) {
     <!--  content -->
     <div class="container bleu ">
         <!--------------------chargement de page jquery---------------------->
-        <div id="container" class="row ">
+        <div id="container"  class="row ">
       <?php include ('../../template/admin/listeJoueur.php')?>
             <!--you content--->
         </div>

@@ -1,4 +1,4 @@
-<div class="card col-12 ml-2 mr-2 bleu" style="background-color: #34BBE6">
+<div class="card col-12 ml-2 mr-2 bleu " style="background-color: #34BBE6">
     <table class="table mauve ">
         <thead class="mauve ">
         <tr class="border-right  border-primary">
