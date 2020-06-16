@@ -23,9 +23,9 @@ else if (isset($_POST['username'])) {
     try {
 
         $db = connexionDB();
-        // modification de l'atribut verrou du joueur
-        $sql = "UPDATE  SET username = ${username}, prenom = ${prenom},nom = ${nom}
-        role = ${role} WHERE id= ${id} ";
+        // modification  d'un admin
+        $sql = "UPDATE user u SET u.username =".$username.", u.prenom =".$prenom.",u.role =".$role." where u.id={$id}";
+
        $data = $db->query($sql);
        $data->closeCursor(); // Termine le traitement de la requête
         //  echo 1;
@@ -35,7 +35,7 @@ else if (isset($_POST['username'])) {
     echo 1;
 }
 
-
+// bloquer ou débloquer un joueur
 else if (isset($_POST['id'])) {
     $id =$_POST['id'];
     try {
